@@ -1,37 +1,38 @@
 //This is the initial game setup
 
-//Create a function that randomizes the computer's selection.
-function computerPlay(computerlist) {
-    computerchoice = computerlist[Math.floor((Math.random()*computerlist.length))];
-    return (computerchoice);
-
-}
-computerPlay(["ROCK","PAPER","SCISSORS"])
-const computerSelection = computerchoice;
-console.log(computerSelection)
-
-//Use onscreen input to have the player choose.
-var choice = window.prompt("Choose Rock, Paper, or Scissors!");
-var playerSelector = choice.toUpperCase();
-
-    if (playerSelector == "ROCK") {
-        alert("You chose " + playerSelector);
-    }
-    else if (playerSelector == "PAPER") {
-        alert("You chose " + playerSelector);   
-    }
-    else if (playerSelector == "SCISSORS") {
-        alert("You chose " + playerSelector);
-    }
-    else {
-        alert("You did not enter Rock, Paper, or Scissors. Please try again.")
-    }
-console.log(playerSelector)
-
+var computerScore = 0
+var playerScore = 0
 //Compare both the computer's selection and the player's selection to test who is the winner.
 for (var i = 0; i < 5; i++) {
-    var computerScore = 0
-    var playerScore = 0
+    
+    //Create a function that randomizes the computer's selection.
+    function computerPlay(computerlist) {
+        computerchoice = computerlist[Math.floor((Math.random()*computerlist.length))];
+        return (computerchoice);
+    }
+    computerPlay(["ROCK","PAPER","SCISSORS"])
+    const computerSelection = computerchoice;
+    console.log(computerSelection)
+
+
+    //Use onscreen input to have the player choose.
+    var choice = window.prompt("Choose Rock, Paper, or Scissors!");
+    var playerSelector = choice.toUpperCase();
+
+        if (playerSelector == "ROCK") {
+            alert("You chose " + playerSelector);
+        }
+        else if (playerSelector == "PAPER") {
+            alert("You chose " + playerSelector);   
+        }
+        else if (playerSelector == "SCISSORS") {
+            alert("You chose " + playerSelector);
+        }
+        else {
+            alert("You did not enter Rock, Paper, or Scissors. Please try again.")
+        }
+    console.log(playerSelector)
+    
 
     if (computerSelection == "ROCK" && playerSelector == "ROCK") {
         alert("Both players chose ROCK. It's a tie.")
